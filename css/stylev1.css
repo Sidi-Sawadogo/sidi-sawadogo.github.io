@@ -1,0 +1,222 @@
+@import url(style_all.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+/*Set the html root properies*/
+
+:root{
+    --purplel: #560784;
+    --greenl: #1fbd09;
+    --green: #047921;
+    --bluel: #1b37d1;
+    --white: #ffffff;
+    --pinkl: #f8f1f1;
+    --grayl: rgb(165, 211, 249);
+    box-sizing: border-box;
+    --font-family-sans-serif: -apple-system, "Source Sans 3", sans-serif, "Apple Color Emoji";
+}
+
+/*Allow all html element to inherit the box-sizing property by default*/
+
+*{box-sizing: inherit;}
+
+/*Navigation menu*/
+
+#home{
+    background-color: var(--grayl);
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 3%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.topmenu{
+    list-style: none;
+    display: inline-flex;
+    margin: 0;
+}
+.topmenu a{
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+#home a:link, a:visited {
+    color: #000;
+}
+
+#home li a{
+    font-size:1em ;
+}
+
+#home a:hover,
+a:focus,
+a:active {
+    color: var(--purplel) !important;
+    text-decoration: underline;
+}
+
+#home a.active {
+    color: var(--purplel) !important;
+}
+
+#toggleMenu{
+    display: none;
+}
+
+.profile_name {
+    font-size: 1.5em;
+    color: #000;
+}
+/* styling Titles*/
+
+h1, h2{
+    color: var(--bluel);
+    font-size: 1.9em;
+}
+
+h2{
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+}
+
+.fa-graduation-cap{
+    float: left;
+    margin-top: 6px;
+}
+
+.ted{
+    font-weight: 700;
+    margin-bottom: 15px;
+    overflow: hidden;
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: rgba(0, 0, 0, .54)
+
+}
+
+.ct{
+    font-size: 1em;
+    font-family: var(--font-family-sans-serif);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom:0;
+}
+
+.ct p{
+    margin-bottom: 0;
+}
+
+.course{
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+/*Default links state ****/
+a:hover{
+    color: var(--purplel);
+}
+/*************************************** Media query for responsive design ***************************************/
+
+@media screen and (max-width:768px){
+    body{
+        font-size: 1rem;
+    }
+    .profile_name{
+        font-size: 80%;
+    }
+
+    #home{
+        justify-content: space-between;
+        padding: 0 5%;
+        align-items: center;
+        height: 60px;
+
+    }
+    #home a{
+        font-size: 2em;
+    }
+    .topmenu a{
+        display: block;
+        padding: 5px;
+    }
+    #toggleMenu, .mobile-menu-icon{
+        display: flex;
+    }
+    /*Codepen menu toggle svg code*/
+    .inline-svg {
+        display:block;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        width: 80px;
+        height: auto;
+        cursor:pointer;
+        }
+        
+    .mobile-menu-icon .svg-menu-toggle {
+        fill: var(--bluel);
+        pointer-events:all; /*needs to be there so the hover works*/
+        cursor:pointer;
+    }
+    .bar {
+        -webkit-transform:rotate(0) translateY(0) translateX(0);
+        transform:rotate(0) translateY(0) translateX(0);
+        opacity:1;
+        -webkit-transform-origin: 20px 10px;
+        transform-origin: 20px 10px;
+        -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+        transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+    }
+          
+          .bar:nth-of-type(1) {
+            -webkit-transform-origin: 20px 10px;
+            transform-origin: 20px 10px;
+          }
+          
+          .bar:nth-of-type(3) {
+            -webkit-transform-origin: 20px 20px;
+            transform-origin: 20px 20px;
+          }
+      
+    .mobile-menu-icon.active .svg-menu-toggle {
+          
+          .bar:nth-of-type(1) {
+          -webkit-transform:rotate(-45deg) translateY(0) translateX(0);
+          transform:rotate(-45deg) translateY(0) translateX(0);
+          }
+      
+          .bar:nth-of-type(2) {
+            opacity:0;
+          }
+      
+        .bar:nth-of-type(3) {
+          -webkit-transform:rotate(45deg) translateY(0em) translateX(0em);
+          transform:rotate(45deg) translateY(0em) translateX(0em);
+        }
+      }
+    #toggleMenu{
+        background-color: transparent;
+        border: 0;
+    }
+    
+    .topmenu{
+        display: none;
+        transition: opacity 0.3s ease-in-out; 
+    }
+    .topmenu.show-menu {
+        display: block;
+        background-color: var(--grayl);
+        position: fixed;
+        top: 59px;
+        right: 0;
+        height: 100%;
+        max-width: 80%;
+        width: 218px;
+        opacity: 1;
+    }
+
+}/*end media query max-width=768px*/
+
+
