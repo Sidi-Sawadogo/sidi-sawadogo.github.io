@@ -4185,7 +4185,7 @@ svg {
 .card-simple {
     background: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 4%);
-    border-left: 1px solid rgba(0, 0, 0, 9%);
+    border-left: 0px solid rgba(0, 0, 0, 9%);
     border-radius: 3px;
     margin-top: 20px;
     padding: 15px 29px
