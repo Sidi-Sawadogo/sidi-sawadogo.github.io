@@ -414,7 +414,7 @@ hr {
 }
 
 .badge {
-    display: inline-block;
+    display: none;
     padding: .25em .4em;
     font-size: 75%;
     font-weight: 700;
